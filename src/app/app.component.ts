@@ -16,10 +16,10 @@ export class AppComponent {
   fb = inject(FormBuilder);
 
   form = this.fb.group({
-    title: [{ value: '', disabled: true}, Validators.required],
-    year: [{ value: '', disabled: true}, Validators.min(1885)],
-    director: [{ value: '', disabled: true}, Validators.required],
-    synopsis: [{ value: '', disabled: true}, Validators.required],
+    title: ['', Validators.required],
+    year: ['', [Validators.required, Validators.min(1896)]],
+    director: ['', Validators.required],
+    synopsis: ['', [Validators.required, Validators.minLength(5)]],
   });
 
 }
